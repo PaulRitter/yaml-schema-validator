@@ -32,6 +32,7 @@ for file in os.listdir():
         data = yamale.make_data(filename)
         try:
             yamale.validate(schema, data)
+            print(f"::debug::Successfully validated file {filename}")
         except YamaleError as e:
             any_error = True
             for result in e.results:
