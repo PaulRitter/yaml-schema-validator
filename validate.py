@@ -28,6 +28,7 @@ files_to_validate = list()
 any_error = False
 for file in os.listdir():
     filename = os.fsdecode(file)
+    print(f"::debug::Matching file {filename}")
     if path_pattern.match(filename):
         data = yamale.make_data(filename)
         try:
