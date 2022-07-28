@@ -8,7 +8,7 @@ import yamale
 from yamale import YamaleError
 
 schema_path = os.getenv('INPUT_SCHEMA')
-path_pattern = re.compile(os.getenv('INPUT_JSON_PATH_PATTERN'))
+path_pattern = re.compile(os.getenv('INPUT_PATH_PATTERN'))
 validators_file = os.getenv('INPUT_VALIDATORS_PATH')
 
 validators = DefaultValidators.copy()
