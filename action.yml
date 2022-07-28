@@ -1,0 +1,19 @@
+name: Yaml Validator
+description: Validates yaml files using yamale.
+runs:
+  using: docker
+  image: Dockerfile
+inputs:
+  schema:
+    description: Path to the YAML Schema to validate with
+    required: true
+  validators_path:
+    description: Path to a python file containing additional custom validators
+    required: false
+  path_pattern:
+    description: Path to YAML files in RegEx
+    required: true
+  strict:
+    description: Enable strict mode
+    required: false
+    default: "true"
