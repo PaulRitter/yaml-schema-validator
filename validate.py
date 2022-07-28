@@ -12,7 +12,7 @@ path_pattern = re.compile(os.getenv('INPUT_PATH_PATTERN'))
 validators_file = os.getenv('INPUT_VALIDATORS_PATH')
 
 validators = DefaultValidators.copy()
-if os.isfile(validators_file):
+if os.path.isfile(validators_file):
     spec = importlib.util.spec_from_file_location("validators", validators_file)
     module = importlib.util.module_from_spec(spec)
     #sys.modules["validators"] = module
