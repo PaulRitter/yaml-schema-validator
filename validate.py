@@ -27,7 +27,7 @@ schema = yamale.make_schema(schema_path, validators=validators)
 
 files_to_validate = list()
 any_error = False
-for file in glob.glob(".", recursive=True):
+for file in glob.glob("./**", recursive=True):
     filename = os.fsdecode(file)
     print(f"::debug::Matching file {filename}")
     if path_pattern.match(filename):
