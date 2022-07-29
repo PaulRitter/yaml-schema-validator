@@ -4,6 +4,8 @@ A github action used to validate yaml files using [Yamale](https://github.com/23
 
 For info on schema syntax, please consult the yamale readme.
 
+An example can be found in the [example folder](/example)
+
 ## Usage
 The workflow has four inputs, two of them required:
 - `schema`: The path to the schema file you want to use to validate the yaml files

@@ -1,0 +1,5 @@
+attribution:
+  files: list(str())
+  license: license()
+  copyright: str()
+  source: url()

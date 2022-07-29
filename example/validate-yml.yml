@@ -1,0 +1,14 @@
+name: YAML Schema Validator
+on: [push]
+
+jobs:
+  yaml-schema-validation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: PaulRitter/yaml-schema-validator@v2
+      with:
+        schema: attribution_schema.yml
+        path_pattern: .*attribution.ya?ml$
+        validators_path: validators.py
+        validators_requirements: requirements.txt
