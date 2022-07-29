@@ -6,6 +6,7 @@ import sys
 from yamale.validators import DefaultValidators, Validator
 import yamale
 from yamale import YamaleError
+import glob
 
 schema_path = os.getenv('INPUT_SCHEMA')
 path_pattern = re.compile(os.getenv('INPUT_PATH_PATTERN'))
@@ -26,7 +27,7 @@ schema = yamale.make_schema(schema_path, validators=validators)
 
 files_to_validate = list()
 any_error = False
-for file in os.listdir():
+for file in glob.glob(".", recursive=True):
     filename = os.fsdecode(file)
     print(f"::debug::Matching file {filename}")
     if path_pattern.match(filename):
