@@ -20,8 +20,7 @@ if os.path.isfile(validators_file):
     sys.modules["validators"] = module
     spec.loader.exec_module(module)
     for cl in inspect.getmembers(module, inspect.isclass):
-        print(cl)
-        if inspect.isclass(cl) and not issubclass(cl, Validator):
+        if inspect.isclass(cl) and not issubclass(cl, Validator) and not cl == Validator:
             continue
         print(f"::debug::Found validator {cl[1].tag}")
         validators[cl[1].tag] = cl[1]
