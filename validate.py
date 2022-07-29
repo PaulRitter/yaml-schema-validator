@@ -14,6 +14,7 @@ validators_file = os.getenv('INPUT_VALIDATORS_PATH')
 
 validators = DefaultValidators.copy()
 if os.path.isfile(validators_file):
+    print(f"::debug::Looking for validators in {validators_file}")
     spec = importlib.util.spec_from_file_location("validators", validators_file)
     module = importlib.util.module_from_spec(spec)
     #sys.modules["validators"] = module
@@ -21,6 +22,7 @@ if os.path.isfile(validators_file):
     for cl in inspect.getmembers(module, inspect.isclass):
         if not issubclass(cl, Validator):
             continue
+        print(f"::debug::Found validator {cl.tag}")
         validators[cl.tag] = cl
 
 schema = yamale.make_schema(schema_path, validators=validators)
@@ -29,7 +31,6 @@ files_to_validate = list()
 any_error = False
 for file in glob.glob("./**", recursive=True):
     filename = os.fsdecode(file)
-    print(f"::debug::Matching file {filename}")
     if path_pattern.match(filename):
         data = yamale.make_data(filename)
         try:
