@@ -17,8 +17,8 @@ if os.path.isfile(validators_file):
     print(f"::debug::Looking for validators in {validators_file}")
     spec = importlib.util.spec_from_file_location("validators", validators_file)
     module = importlib.util.module_from_spec(spec)
-    #sys.modules["validators"] = module
-    #spec.loader.exec_module(module)
+    sys.modules["validators"] = module
+    spec.loader.exec_module(module)
     for cl in inspect.getmembers(module, inspect.isclass):
         if not issubclass(cl, Validator):
             continue
