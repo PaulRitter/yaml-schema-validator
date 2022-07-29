@@ -10,6 +10,9 @@ inputs:
   validators_path:
     description: Path to a python file containing additional custom validators
     required: false
+  validators_requirements:
+    description: Path to a requirements file for the validators python file if necessary
+    required: false
   path_pattern:
     description: Path to YAML files in RegEx
     required: true

@@ -5,4 +5,4 @@ RUN pip install yamale
 COPY . /
 
 RUN chmod +x /entrypoint.sh
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "sh", "-c", "/entrypoint.sh $INPUT_VALIDATORS_REQUIREMENTS" ]
