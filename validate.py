@@ -23,8 +23,8 @@ if os.path.isfile(validators_file):
         print(cl)
         if inspect.isclass(cl) and not issubclass(cl, Validator):
             continue
-        print(f"::debug::Found validator {cl.tag}")
-        validators[cl.tag] = cl
+        print(f"::debug::Found validator {cl[1].tag}")
+        validators[cl[1].tag] = cl[1]
 
 schema = yamale.make_schema(schema_path, validators=validators)
 
