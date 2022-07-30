@@ -1,6 +1,8 @@
-FROM python:3.7-slim-stretch
+FROM python:3.8-slim-buster
+ENV PYTHONUNBUFFERED=1
 
-COPY . /
+WORKDIR /app
+COPY . /app
 
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT [ "/entrypoint.sh" ]
+RUN chmod +x entrypoint.sh
+ENTRYPOINT [ "/app/entrypoint.sh" ]

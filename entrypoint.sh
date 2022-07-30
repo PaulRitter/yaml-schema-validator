@@ -10,4 +10,4 @@ if [ -n "$INPUT_VALIDATORS_REQUIREMENTS" ]; then
   pip install -r $INPUT_VALIDATORS_REQUIREMENTS
 fi
 
-python /validate.py
+python3 validate.py
