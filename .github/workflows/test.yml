@@ -17,5 +17,4 @@ jobs:
         -e INPUT_VALIDATORS_REQUIREMENTS='example/requirements.txt' \
         -e INPUT_SCHEMA='example/attribution_schema.yml' \
         -e INPUT_PATH_PATTERN='example/.+_file\.yml$' \
-        -e INPUT_VALIDATORS_PATH='example/validators.py' \
-        local
+        -e INPUT_VALIDATORS_PATH='example/validators.py' local
