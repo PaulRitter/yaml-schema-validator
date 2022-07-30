@@ -1,7 +1,13 @@
 #!/bin/bash
 
-if [ -n "$1" ]; then
-  pip install -r $1
+if [ -n "$INPUT_YAMALE" ]; then
+  pip install yamale~=$INPUT_YAMALE
+else
+  pip install yamale
+fi
+
+if [ -n "$INPUT_VALIDATORS_REQUIREMENTS" ]; then
+  pip install -r $INPUT_VALIDATORS_REQUIREMENTS
 fi
 
 python /validate.py

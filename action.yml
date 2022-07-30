@@ -20,3 +20,6 @@ inputs:
     description: Enable strict mode
     required: false
     default: "true"
+  yamale:
+    description: Yamale version specifier
+    required: false
