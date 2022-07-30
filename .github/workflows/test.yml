@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build docker image
-      run: docker build -t local < Dockerfile
+      run: docker build -t local Dockerfile
     - name: Run docker image
       run: docker run local
       env:
