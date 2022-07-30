@@ -1,25 +1,25 @@
-name: Yaml Validator
-description: Validates yaml files using yamale.
+name: Yaml Schema Validator
+description: Validate yaml files using yamale.
 runs:
   using: docker
   image: Dockerfile
 inputs:
   schema:
-    description: Path to the YAML Schema to validate with
+    description: The path to the schema file you want to use to validate the yaml files.
     required: true
   validators_path:
-    description: Path to a python file containing additional custom validators
+    description: The path to a python file containing custom validator classes to be used in validation.
     required: false
   validators_requirements:
-    description: Path to a requirements file for the validators python file if necessary
+    description: The path to a pip requirements file containing packages needed to run the validators python file.
     required: false
   path_pattern:
-    description: Path to YAML files in RegEx
+    description: A RegEx pattern matching the files you want to validate.
     required: true
   strict:
-    description: Enable strict mode
+    description: Control wether or not strict mode is used.
     required: false
     default: "true"
   yamale:
-    description: Yamale version specifier
+    description: Sets the used yamale version.
     required: false

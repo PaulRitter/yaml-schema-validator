@@ -11,6 +11,7 @@ import glob
 schema_path = os.getenv('INPUT_SCHEMA')
 path_pattern = re.compile(os.getenv('INPUT_PATH_PATTERN'))
 validators_file = os.getenv('INPUT_VALIDATORS_PATH')
+strict = os.getenv("INPUT_STRICT").lower() in ("yes", "true", "t", "1")
 
 validators = DefaultValidators.copy()
 if os.path.isfile(validators_file):
@@ -34,7 +35,7 @@ for file in glob.glob("./**", recursive=True):
     if path_pattern.match(filename):
         data = yamale.make_data(filename)
         try:
-            yamale.validate(schema, data)
+            yamale.validate(schema, data, strict=strict)
             print(f"::debug::Successfully validated file {filename}")
         except YamaleError as e:
             any_error = True

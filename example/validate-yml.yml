@@ -12,3 +12,5 @@ jobs:
         path_pattern: .*attribution.ya?ml$
         validators_path: validators.py
         validators_requirements: requirements.txt
+        yamale: 4.0.0
+        strict: true
