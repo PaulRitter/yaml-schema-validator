@@ -1,4 +1,4 @@
-name: Yaml Schema Validator
+name: Yaml Schema Validator using Yamale
 description: Validate yaml files using yamale.
 runs:
   using: docker
