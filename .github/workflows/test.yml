@@ -9,10 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: ./entrypoint.sh
-      env:
+    - env:
         INPUT_YAMALE: ${{ matrix.yamale }}
         INPUT_VALIDATORS_REQUIREMENTS: example/requirements.txt
+      run: |
+        chmod +x entrypoint.sh
+        ./entrypoint.sh
     - run: python3 validate.yml
       env:
         INPUT_SCHEMA: example/attribution_schema.yml
