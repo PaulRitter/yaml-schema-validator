@@ -1,4 +1,5 @@
 name: Yaml Schema Validator using Yamale
+author: Paul Ritter
 description: Validate yaml files using yamale.
 runs:
   using: docker
@@ -23,3 +24,6 @@ inputs:
   yamale:
     description: Sets the used yamale version.
     required: false
+branding:
+  icon: 'check-square'  
+  color: 'green'
