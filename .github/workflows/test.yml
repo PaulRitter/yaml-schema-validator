@@ -12,9 +12,4 @@ jobs:
     - name: Build docker image
       run: docker build -t local .
     - name: Run docker image
-      run: docker run \
-        -e INPUT_YAMALE='${{ matrix.yamale }}' \
-        -e INPUT_VALIDATORS_REQUIREMENTS='example/requirements.txt' \
-        -e INPUT_SCHEMA='example/attribution_schema.yml' \
-        -e INPUT_PATH_PATTERN='example/.+_file\.yml$' \
-        -e INPUT_VALIDATORS_PATH='example/validators.py' local
+      run: docker run -e INPUT_YAMALE='${{ matrix.yamale }}' -e INPUT_VALIDATORS_REQUIREMENTS='example/requirements.txt' -e INPUT_SCHEMA='example/attribution_schema.yml' -e INPUT_PATH_PATTERN='example/.+_file\.yml$' -e INPUT_VALIDATORS_PATH='example/validators.py' local
