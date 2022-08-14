@@ -55,5 +55,5 @@ jobs:
 ```
 docker build -t local .
 
-docker run -e INPUT_YAMALE='3.0.0' -e INPUT_VALIDATORS_REQUIREMENTS='example/requirements.txt' -e INPUT_SCHEMA='example/attribution_schema.yml' -e INPUT_PATH_PATTERN='example/.+_file\.yml$' -e INPUT_VALIDATORS_PATH='example/validators.py' local
+docker run -e INPUT_VALIDATORS_REQUIREMENTS=example/requirements.txt -e INPUT_SCHEMA=example/attribution_schema.yml -e INPUT_PATH_PATTERN=.*example/.+_file\.yml$ -e INPUT_VALIDATORS_PATH=example/validators.py -e INPUT_STRICT='TRUE' local
 ```

@@ -1,5 +1,5 @@
 attribution:
-  files: ["test.png", "another.png"]
+  files: [!someTagToBeIgnored:testing "test.png", "another.png"]
   license: "MIT"
   copyright: "haha yes"
-  source: "http://test.com"
+  source: !someTagToBeIgnored:testing "http://test.com"
