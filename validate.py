@@ -9,9 +9,9 @@ from yamale import YamaleError
 import glob
 import yaml
 
-schema_path = f'/app/{os.getenv("INPUT_SCHEMA")}' 
+schema_path = os.getenv("INPUT_SCHEMA")
 path_pattern = re.compile(os.getenv('INPUT_PATH_PATTERN'))
-validators_file = f'/app/{os.getenv("INPUT_VALIDATORS_PATH")}'
+validators_file = os.getenv("INPUT_VALIDATORS_PATH")
 strict = os.getenv("INPUT_STRICT").lower() in ("yes", "true", "t", "1")
 
 validators = DefaultValidators.copy()
