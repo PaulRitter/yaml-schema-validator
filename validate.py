@@ -44,7 +44,7 @@ files_to_validate = list()
 any_error = False
 for file in glob.glob("./**", recursive=True):
     filename = os.fsdecode(file)
-    if os.path.isfile(filename):
+    if not os.path.isfile(filename):
         continue
     actual_path = filename[1:] #cuts out the . from the path
     if path_pattern.match(actual_path):
