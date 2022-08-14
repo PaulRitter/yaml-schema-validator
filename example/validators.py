@@ -3,7 +3,7 @@ import validators
 
 class License(Validator):
     tag = "license"
-    licenses = ["CC-BY-NC-SA-3.0", "MIT"]
+    licenses = ["Custom", "CC-BY-3.0", "CC-BY-NC-SA-3.0", "MIT"]
 
     def _is_valid(self, value):
         return value in self.licenses
